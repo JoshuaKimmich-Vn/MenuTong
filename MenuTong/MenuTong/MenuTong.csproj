@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\calendar-main\calendar\calendar.csproj" />
+    <ProjectReference Include="..\..\Healthcare\HealthcareManagementSystem-main\HealthcareManagementSystem.csproj" />
+    <ProjectReference Include="..\..\LifeManager-master\LifeManager\LifeManager.csproj" />
+  </ItemGroup>
+
+</Project>
