@@ -12,6 +12,7 @@
     <ProjectReference Include="..\..\calendar-main\calendar\calendar.csproj" />
     <ProjectReference Include="..\..\Healthcare\HealthcareManagementSystem-main\HealthcareManagementSystem.csproj" />
     <ProjectReference Include="..\..\LifeManager-master\LifeManager\LifeManager.csproj" />
+    <ProjectReference Include="..\..\QuanLyChiTieu_GUI_CSharp-master\QuanLyChiTieu_GUI_CSharp.csproj" />
   </ItemGroup>
 
 </Project>

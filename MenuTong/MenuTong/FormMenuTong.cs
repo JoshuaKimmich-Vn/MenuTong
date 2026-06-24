@@ -2,7 +2,11 @@
 using System.Drawing;
 using System.Windows.Forms;
 using carlender; // Calendar
-using health; // ✅ Thêm using cho Healthcare
+using health; // Healthcare
+using QuanLyChiTieu_GUI; // Finance
+
+using CalendarMainForm = carlender.MainForm;
+using FinanceMainForm = QuanLyChiTieu_GUI.MainForm;
 
 namespace MenuTong
 {
@@ -10,14 +14,11 @@ namespace MenuTong
     {
         private Form? currentChildForm = null;
 
-        // Calendar
-        private MainForm? calendarForm = null;
+        private CalendarMainForm? calendarForm = null;
 
-        // ✅ Healthcare
         private Form1? healthcareForm = null;
 
-        // Finance (sẽ thêm sau)
-        // private Form? financeForm = null;
+        private FinanceMainForm? financeForm = null;
 
         private string userName = "";
         private string userEmail = "";
@@ -113,7 +114,7 @@ namespace MenuTong
             {
                 if (calendarForm == null || calendarForm.IsDisposed)
                 {
-                    calendarForm = new MainForm();
+                    calendarForm = new CalendarMainForm();
                 }
                 OpenChildForm(calendarForm);
             }
@@ -136,7 +137,6 @@ namespace MenuTong
             {
                 if (healthcareForm == null || healthcareForm.IsDisposed)
                 {
-                    // ✅ Tạo instance của Healthcare - Class name là Form1
                     healthcareForm = new Form1();
                 }
                 OpenChildForm(healthcareForm);
@@ -148,11 +148,27 @@ namespace MenuTong
             }
         }
 
-        // ============ FINANCE (TẠM THỜI) ============
+        // ============ FINANCE ============
         private void buttonFinance_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng Tài chính đang được tích hợp!",
-                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LoadFinance();
+        }
+
+        private void LoadFinance()
+        {
+            try
+            {
+                if (financeForm == null || financeForm.IsDisposed)
+                {
+                    financeForm = new FinanceMainForm();
+                }
+                OpenChildForm(financeForm);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi mở Tài chính:\n{ex.Message}",
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         // ============ SYSTEM ============
